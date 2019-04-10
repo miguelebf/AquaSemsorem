@@ -19,15 +19,17 @@
   color: white;
 }
 
+.App-background{
+  background: url('./Images/background.jpg') no-repeat center center fixed; 
+  
+  min-height:98vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
