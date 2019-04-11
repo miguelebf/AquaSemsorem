@@ -5,6 +5,7 @@ import { Switch } from 'react-router-dom';
 import { withFirebase } from './Firebase/index';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
+import './App.css'
 
 //Components
 import Layout from './Components/Layout'
@@ -37,6 +38,7 @@ class Router extends React.Component{
     
     render(){
         return( 
+            <div className="App-Main">
                 
                 <ReactRouter>
                         <Switch>
@@ -55,6 +57,7 @@ class Router extends React.Component{
                             }
                         </Switch>
                 </ReactRouter>
+            </div>
         );
 
     }
