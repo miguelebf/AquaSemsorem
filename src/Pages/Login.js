@@ -3,6 +3,7 @@ import React from 'react'
 //Own Components
 import {withFirebase} from '../Firebase'
 import LoginView from '../Views/LoginView'
+import { withRouter } from 'react-router-dom';
 
 
 const INITIAL_STATE = {
@@ -63,4 +64,4 @@ class Login extends React.Component{
     }
 }
 
-export default withFirebase(Login)
+export default withRouter(withFirebase(Login))

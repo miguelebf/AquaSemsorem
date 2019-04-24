@@ -5,6 +5,11 @@ import { Switch } from 'react-router-dom';
 import { withFirebase } from './Firebase/index';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
+import Loading from './Pages/Loading';
+import Camaroneras from './Pages/Camaroneras';
+import Camaronera from './Pages/Camaronera';
+import Piscinas from './Pages/Piscinas';
+import Piscina from './Pages/Piscina';
 import './App.css'
 
 //Components
@@ -43,12 +48,16 @@ class Router extends React.Component{
                 <ReactRouter>
                         <Switch>
                             { this.state.authUser==='init' ?   
-                                    <Route path="/" component={Home}/>                          
+                                    <Route path="/" component={Loading}/>                          
                                     : 
                                     this.state.authUser ?
                                             <Layout>
                                                 <Route exact path="/" component={ Home }/>
                                                 <Route exact path="/home" component={Home}/>
+                                                <Route exact path="/camaroneras" component={Camaroneras}/>
+                                                <Route exact path="/camaronera" component={Camaronera}/>
+                                                <Route exact path="/piscinas" component={Piscinas}/>
+                                                <Route exact path="/piscina" component={Piscina}/>
                                             </Layout>
                                     :   
                                     <div> 

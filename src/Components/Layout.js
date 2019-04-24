@@ -19,7 +19,8 @@ import ListItems from "./ListItems";
 const drawerWidth = 240;
 const styles = theme => ({
   root: {
-    display: "flex"
+    display: "flex",
+    height:"100vh",
   },
   toolbar: {
     paddingRight: 24,
@@ -143,6 +144,7 @@ class Layout extends React.Component {
           </Toolbar>
         </AppBar>
         <Drawer
+        onMouseOver={this.handleDrawerOpen}
           variant="permanent"
           classes={{
             paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
@@ -154,9 +156,9 @@ class Layout extends React.Component {
               <ChevronLeftIcon />
             </IconButton>
           </div>
-          <ListItems></ListItems>
-        </Drawer>
-        <main className={classes.content}>
+          <ListItems {...this.state} onMouseOver={this.handleDrawerOpen}></ListItems>
+        </Drawer >
+        <main className={classes.content} onMouseOver={this.handleDrawerClose}>
           <div className={classes.appBarSpacer} />
           {this.props.children}
         </main>

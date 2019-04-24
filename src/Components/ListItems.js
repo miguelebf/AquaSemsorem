@@ -15,11 +15,12 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import DonutLarge from '@material-ui/icons/DonutLarge';
 import BarChartIcon from '@material-ui/icons/BarChart';
-import Receipt from '@material-ui/icons/Receipt';
-import Money from '@material-ui/icons/AttachMoney';
+import  ListAlt     from '@material-ui/icons/ListAlt';
+import NotificationImportant from '@material-ui/icons/NotificationImportant';
 import Settings from '@material-ui/icons/Settings';
 import ExitToApp from '@material-ui/icons/ExitToApp';
 import MobileFriendly from '@material-ui/icons/MobileFriendly';
+import ChromeReaderMode from '@material-ui/icons/ChromeReaderMode';
 import Work from '@material-ui/icons/Work';
 import { Divider } from '@material-ui/core';
 
@@ -53,7 +54,7 @@ class ListItems extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes,onMouseOver } = this.props;
 
     return (
       <div>
@@ -61,6 +62,7 @@ class ListItems extends React.Component {
           <List
             component="nav"
             className={classes.root}
+            
           >
           <ListItem button component={Link} to='/home'>
             <ListItemIcon>
@@ -69,84 +71,45 @@ class ListItems extends React.Component {
             <ListItemText inset primary="Inicio" />
           </ListItem>
 
-          <ListItem button>
+          <ListItem button component={Link} to='/camaroneras'>
             <ListItemIcon>
               <Assignment />
             </ListItemIcon>
-            <ListItemText inset primary="Facturacion" />
+            <ListItemText inset primary="Camaroneras" />
+          </ListItem>
+
+          <ListItem button component={Link} to='/piscinas'>
+            <ListItemIcon>
+              <ListAlt />
+            </ListItemIcon>
+            <ListItemText inset primary="Piscinas" />
           </ListItem>
 
           <ListItem button>
             <ListItemIcon>
-              <Money />
+              <NotificationImportant />
             </ListItemIcon>
-            <ListItemText inset primary="Financiero" />
+            <ListItemText inset primary="Alertas" />
           </ListItem>
 
           <ListItem button>
-            <ListItemIcon>
-              <Work />
-            </ListItemIcon>
-            <ListItemText inset primary="Contabilidad" />
-          </ListItem>
-
-          <ListItem button onClick={this.handleClickOp}>
-            <ListItemIcon>
-              <DonutLarge />
-            </ListItemIcon>
-            <ListItemText inset primary="Operaciones" />
-            {this.state.openOperaciones ? <ExpandLess /> : <ExpandMore />}
-          </ListItem>
-
-          <Collapse in={this.state.openOperaciones} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-            <ListItem button className={classes.nested} component={Link} to="/home/operations/">
-                  <ListItemIcon>
-                    <Receipt />
-                  </ListItemIcon>
-                  <ListItemText inset primary="Operaciones" />
-              </ListItem>
-              <ListItem button className={classes.nested} component={Link} to="/home/operations/ships">
-                  <ListItemIcon>
-                    <Receipt />
-                  </ListItemIcon>
-                  <ListItemText inset primary="Barcos" />
-              </ListItem>
-            </List>
-          </Collapse>
-
-          <ListItem button >
             <ListItemIcon>
               <BarChartIcon />
             </ListItemIcon>
-            <ListItemText inset primary="Reportes" />
+            <ListItemText inset primary="Estadisticas" />
           </ListItem>
 
-          <ListItem button onClick={this.handleClickApp}>
+          <ListItem button >
             <ListItemIcon>
-              <MobileFriendly />
+              <ChromeReaderMode />
             </ListItemIcon>
-            <ListItemText inset primary="App" />
-            {/* Ojo ... condition ? value-if-true : value-if-false */}
-            {this.state.openApp ? <ExpandLess /> : <ExpandMore />}
+            <ListItemText inset primary="Reportes" />
           </ListItem>
-          
-          <Collapse in={this.state.openApp} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItem button className={classes.nested} component={Link} to="/home/app/reports">
-                <ListItemIcon>
-                  <Receipt />
-                </ListItemIcon>
-                <ListItemText inset primary="Reportes"/>
-              </ListItem>
-            </List>
-          </Collapse>
-          
           </List>
           
         <Divider/>
 
-        <List>
+        <List onMouseOver={onMouseOver}>
           <ListItem button>
             <ListItemIcon>
             <Settings />
