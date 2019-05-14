@@ -13,6 +13,7 @@ import signal from '../Images/signal.png';
 
 import { Paper } from '@material-ui/core';
 import TablaPiscinas from '../Components/TablaPiscinas';
+import GraficoLineal from '../Components/GraficoLineal';
 
 //Own Components 
 
@@ -88,17 +89,30 @@ class PiscinaView extends React.Component{
                 <Tarjeta titulo="Estado" image={on} valor="Activo" color="Green"  />
             </Grid> 
             <Grid item xs={3} >
-                <Tarjeta titulo="Señal" image={signal} valor="3" color="Red"  />   
+                <Tarjeta titulo="Señal" image={signal} valor="-132 dBm" color="Red"  />   
             </Grid> 
             <Grid item xs={3} >
-                <Tarjeta titulo="Battery" image={baterry} valor="3" color="Green"  />
+                <Tarjeta titulo="Battery" image={baterry} valor="4000 mAh" color="Green"  />
             </Grid> 
             <Grid item xs={3} >
                 <Tarjeta titulo="Alertas" image={alert} valor="5" color="Red"  />
             </Grid>
             <Grid item xs={12} >
-                
+                <GraficoLineal titulo={"Temperatura"} unit={"°C"} mayor={40} menor={38}></GraficoLineal>
             </Grid> 
+            <Grid item xs={12} >
+                <GraficoLineal titulo={"PH"} unit={"°C"} mayor={40} menor={38}></GraficoLineal>
+            </Grid>
+            <Grid item xs={12} >
+                <GraficoLineal titulo={"Oxigeno Disuelto OD"} unit={"°C"} mayor={40} menor={38}></GraficoLineal>
+            </Grid>
+            <Grid item xs={12} >
+                <GraficoLineal titulo={"Temperatura"} unit={"°C"} mayor={40} menor={38}></GraficoLineal>
+            </Grid>
+            <Grid item xs={12} >
+                <GraficoLineal titulo={"Temperatura"} unit={"°C"} mayor={40} menor={38}></GraficoLineal>
+            </Grid>
+             
 
         </Grid>
       </div>
