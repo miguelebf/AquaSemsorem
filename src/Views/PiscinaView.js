@@ -101,16 +101,19 @@ class PiscinaView extends React.Component{
                 <GraficoLineal titulo={"Temperatura"} unit={"°C"} mayor={40} menor={38}></GraficoLineal>
             </Grid> 
             <Grid item xs={12} >
-                <GraficoLineal titulo={"PH"} unit={"°C"} mayor={40} menor={38}></GraficoLineal>
+                <GraficoLineal titulo={"PH"} unit={""} mayor={8.5} menor={7.5}></GraficoLineal>
             </Grid>
             <Grid item xs={12} >
-                <GraficoLineal titulo={"Oxigeno Disuelto OD"} unit={"°C"} mayor={40} menor={38}></GraficoLineal>
+                <GraficoLineal titulo={"Oxigeno Disuelto OD"} unit={"mg/L"} mayor={9} menor={7}></GraficoLineal>
             </Grid>
             <Grid item xs={12} >
-                <GraficoLineal titulo={"Temperatura"} unit={"°C"} mayor={40} menor={38}></GraficoLineal>
+                <GraficoLineal titulo={"Magnesio Mg+2"} unit={"mg/L"} mayor={90} menor={80}></GraficoLineal>
             </Grid>
             <Grid item xs={12} >
-                <GraficoLineal titulo={"Temperatura"} unit={"°C"} mayor={40} menor={38}></GraficoLineal>
+                <GraficoLineal titulo={"Nitrato NO3"} unit={"mg/L"} mayor={4.4} menor={2.2}></GraficoLineal>
+            </Grid>
+            <Grid item xs={12} >
+                <GraficoLineal titulo={"Sodio Na+"} unit={"mg/L"} mayor={90} menor={280}></GraficoLineal>
             </Grid>
              
 

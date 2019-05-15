@@ -89,9 +89,9 @@ const data = [];
             >
               <CartesianGrid stroke='#003C72'/>
               <XAxis dataKey="name" padding={{left: left, right: -300}} tick={true} domain={['dataMin -5', 'dataMax + 5']}/>
-              <YAxis type="number" domain={[38, 40]}/>
+              <YAxis type="number" />
               <Tooltip />
-              <Line type='natural' dataKey={barIndex}  dot={false} stroke='#f49842' isAnimationActive={animation} animationEasing={'linear'} animationDuration={1000}/>
+              <Line type='linear' dataKey={barIndex}  dot={false} stroke='#f49842' isAnimationActive={animation} animationEasing={'linear'} animationDuration={1000} strokeWidth={2}/>
             </LineChart> 
             </ResponsiveContainer>
           </Paper>
